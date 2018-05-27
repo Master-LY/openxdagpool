@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Unix CPU miner setup (Ubuntu 16.04)
+	Unix CPU 矿工设置 (Ubuntu 16.04)
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Unix CPU miner setup
+					Unix CPU 矿工设置
 				</h1>
 				<h2 class="subtitle">
-					For Ubuntu 16.04
+					适用于 Ubuntu 16.04
 				</h2>
 			</div>
 		</div>
@@ -25,22 +25,22 @@
 			<nav class="card">
 				<header class="card-header">
 					<p class="card-header-title">
-						Initial setup
+						设置步骤
 					</p>
 				</header>
 
 				<div class="card-content">
 					<div class="content">
 						<ol>
-							<li><code>cd</code> to your home directory. Do not run the miner as <code>root</code>!</li>
-							<li>Execute: <code>sudo apt-get install gcc libssl-dev build-essential git</code></li>
-							<li>Execute: <code>git clone https://github.com/XDagger/xdag.git</code></li>
-							<li>Change directory: <code> cd ./xdag/client</code></li>
-							<li>Run <code>make</code></li>
-							<li>Run the program with <code>./xdag -d -m 1 {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }}</code>. Set up your wallet password, type random keys (at least 3 lines of random keys). Wait until host keys are generated.</li>
-							<li>Execute <code>./xdag -i</code>. Type <code>terminate</code> and press enter.</li>
-							<li><code>cd</code> to your home directory</li>
-							<li>Execute:
+							<li><code>cd</code> 到您的主目录。不要以 <code>root</code>运行矿工！</li>
+							<li>执行： <code>sudo apt-get install gcc libssl-dev build-essential git</code></li>
+							<li>执行： <code>git clone https://github.com/XDagger/xdag.git</code></li>
+							<li>更改目录： <code> cd ./xdag/client</code></li>
+							<li>运行 <code>make</code></li>
+							<li>以 <code>./xdag -d -m 1 {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }}</code> 运行程序。设置你的钱包密码，输入随机密钥（至少3行随机密钥）。等到主机密钥生成。</li>
+							<li>执行 <code>./xdag -i</code>。键入 <code>terminate</code> 并按下Enter键。</li>
+							<li><code>cd</code> 到您的主目录</li>
+							<li>执行：
 <pre>cat << 'EOD' > ./xdag_console.sh
 #!/bin/bash
 
@@ -57,7 +57,7 @@ echo -n "Daemon PIDs: "
 pidof xdag
 EOD</pre>
 							</li>
-							<li>Execute:
+							<li>执行：
 <pre>cat << 'EOD' > ./xdag_run.sh
 #!/bin/bash
 
@@ -73,9 +73,9 @@ echo Starting daemon...
 (cd ./xdag/client &amp;&amp; ./xdag -d -m <span class="parameter">4</span> {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }})
 echo -n "Daemon PIDs: "
 pidof xdag
-EOD</pre>Replace <span class="parameter">4</span> with number of mining threads, for dedicated mining machines, set this to number of CPU threads. You can control this later by typing <code>mining N</code> in the XDAG console, where <span class="parameter">N</span> is the number of mining threads you want to run.
+EOD</pre>将 <span class="parameter">4</span> 替换为挖矿所需要的线程数，对于只用来挖矿的机器，将其设置为CPU线程数以最大化采矿效率。稍后可以通过在XDAG控制台中键入 <code>mining N</code> 来控制此操作，其中 <span class="parameter">N</span> 是要运行的挖矿线程的数量。
 							</li>
-							<li>Execute:
+							<li>执行：
 <pre>cat << 'EOD' > ./xdag_update.sh
 #!/bin/bash
 
@@ -93,9 +93,9 @@ echo Updating git repository...
 echo "Done! Start the daemon with ./xdag_run.sh"
 EOD</pre>
 							</li>
-							<li>Execute <code>chmod +x xdag_*</code></li>
+							<li>执行 <code>chmod +x xdag_*</code></li>
 						</ol>
-						<p>Done! For usage, see the next usage section.</p>
+						<p>完成！有关用法，请参阅下列用法部分。</p>
 					</div>
 				</div>
 			</nav>
@@ -107,17 +107,17 @@ EOD</pre>
 			<nav class="card">
 				<header class="card-header">
 					<p class="card-header-title">
-						Usage
+						用法
 					</p>
 				</header>
 
 				<div class="card-content">
 					<div class="content">
 						<ol>
-							<li>To start the miner, simply execute <code>./xdag_run.sh</code> in your home folder, type in your wallet password.</li>
-							<li>To connect to the miner console at any time, execute <code>./xdag_console.sh</code>.</li>
-							<li>To conveniently update your installation to the latest version, stop the deamon by executing <code>./xdag_console.sh</code>, type <code>terminate</code>, press enter, run <code>./xdag_update.sh</code>, then <code>./xdag_run.sh</code> and type your wallet password again.</li>
-							<li>To view your current balance at any time, type <code>balance</code> in the miner console. To show your wallet address, type <code>account</code> in the miner console. You can also use our website to check your balance at any time on the home page, or <a href="{{ route('register') }}">register</a> your miner to automatically show it's balance, payouts, unpaid shares and more.</li>
+							<li>要启动矿工，只需在您的个人文件夹中执行 <code>./xdag_run.sh</code> ，输入您的钱包密码。</li>
+							<li>要随时连接到矿工控制台，请执行 <code>./xdag_console.sh</code>.</li>
+							<li>要方便地将安装更新到最新版本，请执行以下操作来停止deamon： <code>./xdag_console.sh</code>，键入 <code>terminate</code>，按Enter键，运行 <code>./xdag_update.sh</code>，然后 <code>./xdag_run.sh</code> 再次键入您的钱包密码。</li>
+							<li>要随时查看您的当前余额，请在矿工控制台输入 <code>balance</code> 。要显示您的钱包地址，请在矿工控制台输入 <code>account</code> 。您也可以使用我们的网站随时在主页上查看您的余额，或 <a href="{{ route('register') }}">注册</a> 你的矿工以自动显示余额，支出，未付份额等。</li>
 						</ol>
 					</div>
 				</div>

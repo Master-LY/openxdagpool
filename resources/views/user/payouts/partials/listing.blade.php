@@ -1,10 +1,10 @@
 <table class="table is-fullwidth">
 	<thead>
 		<tr>
-			<th>Date and time</th>
-			<th>Sender</th>
-			<th>Recipient</th>
-			<th>Amount</th>
+			<th>日期和时间</th>
+			<th>发送方</th>
+			<th>接收方</th>
+			<th>数量</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -17,18 +17,18 @@
 			</tr>
 		@empty
 			<tr>
-				<td colspan="4">No payouts yet, check back soon! ;-)</td>
+				<td colspan="4">尚未支出，请稍后再查看！;-)</td>
 			</tr>
 		@endforelse
 	</tbody>
 	@if ($payouts->count())
 		<tfoot>
 			<tr>
-				<th colspan="3">Total on page</th>
+				<th colspan="3">页面总数</th>
 				<th>{{ number_format($payouts->sum('amount'), 9, '.', ',') }} XDAG</th>
 			</tr>
 			<tr>
-				<th colspan="3">Total</th>
+				<th colspan="3">总计</th>
 				<th>{{ number_format($payouts_sum, 9, '.', ',') }} XDAG</th>
 			</tr>
 		</tfoot>

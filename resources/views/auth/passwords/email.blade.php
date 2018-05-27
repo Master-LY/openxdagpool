@@ -9,7 +9,7 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Reset password
+					重设密码
 				</h1>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
         <div class="column is-5">
             <div class="card">
                 <header class="card-header">
-                    <p class="card-header-title">Reset password</p>
+                    <p class="card-header-title">重设密码</p>
                 </header>
 
                 <div class="card-content">
@@ -61,7 +61,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Send password reset link
+                                        <button type="submit" class="button is-primary">发送重设密码链接
                                         </button>
                                     </div>
                                 </div>

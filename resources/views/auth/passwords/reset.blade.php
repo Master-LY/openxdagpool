@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Reset password
+	重设密码
 @endsection
 
 @section('hero')
@@ -9,7 +9,7 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Reset password
+					重设密码
 				</h1>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
         <div class="column is-5">
             <div class="card">
                 <header class="card-header">
-                    <p class="card-header-title">Reset password</p>
+                    <p class="card-header-title">重设密码</p>
                 </header>
 
                 <div class="card-content">
@@ -60,7 +60,7 @@
 
                         <div class="field is-horizontal">
                             <div class="field-label">
-                                <label class="label">Password</label>
+                                <label class="label">password</label>
                             </div>
 
                             <div class="field-body">
@@ -81,7 +81,7 @@
 
                         <div class="field is-horizontal">
                             <div class="field-label">
-                                <label class="label">Confirm password</label>
+                                <label class="label">password_confirmation</label>
                             </div>
 
                             <div class="field-body">
@@ -100,7 +100,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Reset password</button>
+                                        <button type="submit" class="button is-primary">重设密码</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-	Miners by hashrate
+	矿工算力
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Miners by hashrate
+					矿工算力
 				</h1>
 				<h2 class="subtitle">
-					All pool miners grouped by hashrate
+					矿池所有矿工按算力分组
 				</h2>
 			</div>
 		</div>
@@ -23,11 +23,11 @@
 	<table class="miners-grouped table is-fullwidth">
 		<thead>
 			<tr>
-				<th>Miner address</th>
-				<th>Machines</th>
-				<th>Unpaid shares</th>
-				<th class="tooltip is-tooltip-multiline" data-tooltip="Current estimated hashrate. The value is not averaged or corrected by any means.">Hashrate</th>
-				<th class="tooltip is-tooltip-multiline" data-tooltip="Miner address is registered to these user accounts.">Users</th>
+				<th>矿工地址</th>
+				<th>机器数量</th>
+				<th>未支付份额</th>
+				<th class="tooltip is-tooltip-multiline" data-tooltip="Current estimated hashrate. The value is not averaged or corrected by any means.">算力</th>
+				<th class="tooltip is-tooltip-multiline" data-tooltip="Miner address is registered to these user accounts.">用户</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -55,14 +55,14 @@
 		<div class="modal-background"></div>
 		<div class="modal-card">
 			<header class="modal-card-head">
-				<p class="modal-card-title">Miner details</p>
+				<p class="modal-card-title">矿工细节</p>
 				<a class="delete close-modal" aria-label="close" href="#"></a>
 			</header>
 			<section class="modal-card-body">
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">Address</label>
+							<label class="label">地址</label>
 						</div>
 
 						<div class="field-body">
@@ -81,7 +81,7 @@
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">Unpaid shares</label>
+							<label class="label">未支付份额</label>
 						</div>
 
 						<div class="field-body">
@@ -100,7 +100,7 @@
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">In / out bytes</label>
+							<label class="label"> 入/出 bytes </label>
 						</div>
 
 						<div class="field-body">
@@ -119,7 +119,7 @@
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">Machines</label>
+							<label class="label">机器</label>
 						</div>
 
 						<div class="field-body">
@@ -131,7 +131,7 @@
 				</div>
 			</section>
 			<footer class="modal-card-foot">
-				<button type="button" class="button close-modal">Close</button>
+				<button type="button" class="button close-modal">关闭</button>
 			</footer>
 		</div>
 	</div>

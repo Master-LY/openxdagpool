@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Register
+	注册
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Register
+					注册
 				</h1>
 				<h2 class="subtitle">
-					Register if you want to easily keep track of your miners, their hashrates, balances, payouts and receive email notifications should your miner go offline.
+					注册后可以追踪矿工、算力、余额、付款，以及在矿工掉线的时候收到邮件提醒。
 				</h2>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 		<div class="column is-5">
 			<div class="card">
 				<header class="card-header">
-					<p class="card-header-title">Register</p>
+					<p class="card-header-title">注册</p>
 				</header>
 
 				<div class="card-content">
@@ -112,7 +112,7 @@
 							<div class="field-body">
 								<div class="field is-grouped">
 									<div class="control">
-										<button type="submit" class="button is-primary">Register</button>
+										<button type="submit" class="button is-primary">注册</button>
 									</div>
 								</div>
 							</div>

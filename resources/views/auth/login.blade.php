@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Login
+	登录
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Login
+					登录
 				</h1>
 				<h2 class="subtitle">
-					Login to access your list of miners, their hashrates, balances and payouts.
+					登录后可查看个人矿工列表，算力，钱包余额和支付记录。
 				</h2>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 		<div class="column is-5">
 			<div class="card">
 				<header class="card-header">
-					<p class="card-header-title">Login</p>
+					<p class="card-header-title">登录</p>
 				</header>
 
 				<div class="card-content">
@@ -79,7 +79,7 @@
 									<p class="control">
 										<label class="checkbox">
 											<input type="checkbox"
-												   name="remember" {{ old('remember') ? 'checked' : '' }}> Remember me
+												   name="remember" {{ old('remember') ? 'checked' : '' }}> 记住我
 										</label>
 									</p>
 								</div>
@@ -92,12 +92,12 @@
 							<div class="field-body">
 								<div class="field is-grouped">
 									<div class="control">
-										<button type="submit" class="button is-primary">Log in</button>
+										<button type="submit" class="button is-primary">登录</button>
 									</div>
 
 									<div class="control">
 										<a href="{{ route('password.request') }}">
-											Forgot your password?
+											忘记了密码？
 										</a>
 									</div>
 								</div>

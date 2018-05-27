@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Found blocks
+	发现区块
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Found blocks
+					发现区块
 				</h1>
 				<h2 class="subtitle">
-					Last 150 blocks mined by this pool
+					本矿池最近挖到的 150 个区块
 				</h2>
 			</div>
 		</div>
@@ -25,13 +25,13 @@
 			<nav class="card">
 				<header class="card-header">
 					<p class="card-header-title">
-						Found blocks
+						发现区块
 					</p>
 				</header>
 
 				<div class="card-content">
 					<div class="content">
-						<p><span class="important">Note:</span> This list updates every 4 hours. Times are listed in UTC. Blocks are paid out immediately after they are found.</p>
+						<p><span class="important">注意：</span> 本列表每4小时更新一次。时间按UTC排列。发现区块后将立即支付。</p>
 
 						<table class="table is-fullwidth">
 							<thead>
@@ -56,7 +56,7 @@
 									</tr>
 								@empty
 									<tr>
-										<td colspan="4">No found blocks yet, please come back later! ;-)</td>
+										<td colspan="4">暂时还未发现区块，请稍后回来查看！;-)</td>
 									</tr>
 								@endforelse
 							</tbody>

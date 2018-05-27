@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-	{{ $user->nick }}'s profile
+	{{ $user->nick }}的档案
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					{{ $user->nick }}'s profile
+					{{ $user->nick }}的档案
 				</h1>
 				<h2 class="subtitle">
-					Update user profile below
+					在下面更新用户档案
 				</h2>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 	<nav class="card">
 		<header class="card-header">
 			<p class="card-header-title">
-				Update profile
+				更新档案
 			</p>
 		</header>
 
@@ -120,7 +120,7 @@
 				<div class="field is-horizontal">
 					<div class="field-label"></div>
 					<div class="field-body">
-						<p class="help">Do not type passwords if you don't want to change user's password.</p>
+						<p class="help">如果你不打算更改用户的密码，不要在此输入密码。</p>
 					</div>
 				</div>
 
@@ -146,7 +146,7 @@
 
 				<div class="field is-horizontal">
 					<div class="field-label">
-						<label class="label">Confirm password</label>
+						<label class="label">确认密码</label>
 					</div>
 
 					<div class="field-body">
@@ -164,7 +164,7 @@
 					<div class="field-body">
 						<div class="field is-grouped">
 							<div class="control">
-								<button type="submit" class="button is-primary">Save</button>
+								<button type="submit" class="button is-primary">保存</button>
 							</div>
 						</div>
 					</div>

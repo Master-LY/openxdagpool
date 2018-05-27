@@ -12,7 +12,7 @@
 					{{ Auth::user()->nick }}
 				</h1>
 				<h2 class="subtitle">
-					Update your profile
+					更新你的档案
 				</h2>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 			<nav class="card">
 				<header class="card-header">
 					<p class="card-header-title">
-						Update profile
+						更新档案
 					</p>
 				</header>
 
@@ -60,7 +60,7 @@
 								<label class="checkbox tooltip" data-tooltip="When checked, your nick is never displayed to other users.">
 									<input type="hidden" name="anonymous_profile" value="0">
 									<input type="checkbox" name="anonymous_profile" value="1"{{ $authUser->anonymous_profile ? ' checked' : '' }}>
-									anonymous profile
+									匿名档案
 								</label>
 							</div>
 						</div>
@@ -71,7 +71,7 @@
 								<label class="checkbox tooltip is-tooltip-multiline" data-tooltip="When checked, your hashrate is never displayed on the leaderboard.">
 									<input type="hidden" name="exclude_from_leaderboard" value="0">
 									<input type="checkbox" name="exclude_from_leaderboard" value="1"{{ $authUser->exclude_from_leaderboard ? ' checked' : '' }}>
-									exclude from leaderboard
+									从排行榜排除
 								</label>
 							</div>
 						</div>
@@ -99,7 +99,7 @@
 						<div class="field is-horizontal">
 							<div class="field-label"></div>
 							<div class="field-body">
-								<p class="help">Do not type passwords if you don't want to change your current password.</p>
+								<p class="help">如果你不打算更改现有密码，请不要在此键入密码。</p>
 							</div>
 						</div>
 
@@ -143,7 +143,7 @@
 							<div class="field-body">
 								<div class="field is-grouped">
 									<div class="control">
-										<button type="submit" class="button is-primary">Save</button>
+										<button type="submit" class="button is-primary">保存</button>
 									</div>
 								</div>
 							</div>

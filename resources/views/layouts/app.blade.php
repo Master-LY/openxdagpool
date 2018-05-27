@@ -18,7 +18,7 @@
 			<nav class="navbar has-shadow">
 				<div class="container">
 					<div class="navbar-brand">
-						<a href="{{ url('/') }}" class="navbar-item">Home</a>
+						<a href="{{ url('/') }}" class="navbar-item">主页</a>
 
 						<div class="navbar-burger burger">
 							<span></span>
@@ -30,51 +30,51 @@
 					<div class="navbar-menu" id="navMenu">
 						<div class="navbar-start">
 							<div class="navbar-item has-dropdown is-hoverable">
-								<a class="navbar-link" href="{{ route('stats') }}">Resources</a>
+								<a class="navbar-link" href="{{ route('stats') }}">资源</a>
 
 								<div class="navbar-dropdown">
-									<a class="navbar-item" href="http://xdag.io" target="_blank">XDAG website</a>
-									<a class="navbar-item" href="https://explorer.xdag.io" target="_blank">XDAG explorer</a>
-									<a class="navbar-item" href="https://bitcointalk.org/index.php?topic=2552368" target="_blank">Bitcointalk thread</a>
+									<a class="navbar-item" href="http://xdag.io" target="_blank">XDAG 官网</a>
+									<a class="navbar-item" href="https://explorer.xdag.io" target="_blank">XDAG 区块浏览器</a>
+									<a class="navbar-item" href="https://bitcointalk.org/index.php?topic=2552368" target="_blank">Bitcointalk 讨论页</a>
 
 									<hr class="navbar-divider">
 
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.windows-gpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/windows-gpu') }}">Windows GPU miner setup</a>
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.windows-cpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/windows-cpu') }}">Windows CPU miner setup</a>
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.unix-gpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/unix-gpu') }}">Unix GPU miner setup</a>
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.unix-cpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/unix-cpu') }}">Unix CPU miner setup</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.windows-gpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/windows-gpu') }}">Windows GPU 矿工设置</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.windows-cpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/windows-cpu') }}">Windows CPU 矿工设置</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.unix-gpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/unix-gpu') }}">Unix GPU 矿工设置</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'setup.unix-cpu' ? ' is-active' : '' !!}" href="{{ route('pages', 'setup/unix-cpu') }}">Unix CPU 矿工设置</a>
 
 									<hr class="navbar-divider">
 
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'stats' ? ' is-active' : '' !!}" href="{{ route('stats') }}">Statistics</a>
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'found-blocks' ? ' is-active' : '' !!}" href="{{ route('found-blocks') }}">Found blocks</a>
-									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'leaderboard' ? ' is-active' : '' !!}" href="{{ route('leaderboard') }}">Leaderboard</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'stats' ? ' is-active' : '' !!}" href="{{ route('stats') }}">状态</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'found-blocks' ? ' is-active' : '' !!}" href="{{ route('found-blocks') }}">已发现区块</a>
+									<a class="navbar-item{!! isset($activeTab) && $activeTab == 'leaderboard' ? ' is-active' : '' !!}" href="{{ route('leaderboard') }}">排行榜</a>
 								</div>
 							</div>
 						</div>
 
 						<div class="navbar-end">
 							@if (Auth::guest())
-								<a class="navbar-item{!! isset($activeTab) && $activeTab == 'login' ? ' is-active' : '' !!}" href="{{ route('login') }}">Login</a>
-								<a class="navbar-item{!! isset($activeTab) && $activeTab == 'register' ? ' is-active' : '' !!}" href="{{ route('register') }}">Register</a>
+								<a class="navbar-item{!! isset($activeTab) && $activeTab == 'login' ? ' is-active' : '' !!}" href="{{ route('login') }}">登录</a>
+								<a class="navbar-item{!! isset($activeTab) && $activeTab == 'register' ? ' is-active' : '' !!}" href="{{ route('register') }}">注册</a>
 							@else
 								<div class="navbar-item has-dropdown is-hoverable">
 									<a class="navbar-link" href="{{ route('miners') }}">{{ Auth::user()->display_nick }}</a>
 
 									<div class="navbar-dropdown">
-										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'profile' ? ' is-active' : '' !!}" href="{{ route('profile') }}">Profile</a>
-										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'miners' ? ' is-active' : '' !!}" href="{{ route('miners') }}">Miners</a>
-										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'payouts' ? ' is-active' : '' !!}" href="{{ route('user.payouts.graph') }}">Payouts</a>
-										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'hashrate' ? ' is-active' : '' !!}" href="{{ route('user.hashrate.graph', 'latest') }}">Hashrate</a>
+										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'profile' ? ' is-active' : '' !!}" href="{{ route('profile') }}">档案</a>
+										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'miners' ? ' is-active' : '' !!}" href="{{ route('miners') }}">矿工</a>
+										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'payouts' ? ' is-active' : '' !!}" href="{{ route('user.payouts.graph') }}">支出</a>
+										<a class="navbar-item{!! isset($activeTab) && $activeTab == 'hashrate' ? ' is-active' : '' !!}" href="{{ route('user.hashrate.graph', 'latest') }}">算力</a>
 
 										@if ($authUser->isAdministrator())
 											<hr class="navbar-divider">
-											<a class="navbar-item{!! isset($activeTab) && $activeTab == 'admin' ? ' is-active' : '' !!}" href="{{ route('user.admin.users') }}">Admin</a>
+											<a class="navbar-item{!! isset($activeTab) && $activeTab == 'admin' ? ' is-active' : '' !!}" href="{{ route('user.admin.users') }}">管理</a>
 										@endif
 
 										<hr class="navbar-divider">
 
-										<a class="navbar-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+										<a class="navbar-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">登出</a>
 
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 											{{ csrf_field() }}
@@ -147,12 +147,12 @@
 				<div class="modal-background"></div>
 				<div class="modal-card">
 					<header class="modal-card-head">
-						<p class="modal-card-title">Contact us</p>
+						<p class="modal-card-title">联系我们</p>
 						<a class="delete close-modal" aria-label="close" href="#"></a>
 					</header>
 					<section class="modal-card-body">
-						<p>Questions, comments, or suggestions? Contact us at <span id="contactEmail" data-transform-applied="false">{{ base64_encode(str_replace(['@', '.'], ['&', '*'], str_rot13($contactEmail))) }}</span>.</p>
-						<p>View the OpenXDAGPool project at <a href="https://github.com/XDagger/openxdagpool" target="_blank">GitHub</a>.</p>
+						<p>问题，评论或建议？请通过 <span id="contactEmail" data-transform-applied="false">{{ base64_encode(str_replace(['@', '.'], ['&', '*'], str_rot13($contactEmail))) }}</span>联系我们。</p>
+						<p>在 <a href="https://github.com/XDagger/openxdagpool" target="_blank">GitHub</a> 查看OpenXDAGPool项目</p>
 					</section>
 					<footer class="modal-card-foot">
 						<button type="button" class="button close-modal">Close</button>

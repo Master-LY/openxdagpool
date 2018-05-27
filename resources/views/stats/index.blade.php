@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Statistics
+	统计数据
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Statistics
+					统计数据
 				</h1>
 				<h2 class="subtitle">
-					Hash rates and active miners count
+					哈希率和活跃矿工数量
 				</h2>
 			</div>
 		</div>
@@ -28,10 +28,10 @@
 						<div class="tabs stat-tabs">
 							<ul>
 								<li class="is-active" data-target="all"><a>All</a></li>
-								<li data-target=".pool-hashrate"><a>Pool hashrate</a></li>
-								<li data-target=".active-miners"><a>Active miners</a></li>
-								<li data-target=".found-blocks"><a>Found blocks</a></li>
-								<li data-target=".network-hashrate"><a>Network hashrate</a></li>
+								<li data-target=".pool-hashrate"><a>矿池哈希率</a></li>
+								<li data-target=".active-miners"><a>活跃矿工</a></li>
+								<li data-target=".found-blocks"><a>发现的区块</a></li>
+								<li data-target=".network-hashrate"><a>全网哈希率</a></li>
 							</ul>
 						</div>
 					</header>

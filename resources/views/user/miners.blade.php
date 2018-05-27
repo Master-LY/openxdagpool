@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Miners
+	矿工
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Miners
+					矿工
 				</h1>
 				<h2 class="subtitle">
-					Manage your miners easily.
+					Manage your miners easily.轻松管理你的矿工
 				</h2>
 			</div>
 		</div>
@@ -28,12 +28,12 @@
 					<table class="table is-fullwidth miners-list">
 						<thead>
 							<tr>
-								<th>Miner address</th>
-								<th class="tooltip" data-tooltip="Status updates every 5 minutes.">Status</th>
-								<th class="tooltip" data-tooltip="Estimated hashrate. Updates every 5 minutes.">Hashrate</th>
-								<th class="tooltip" data-tooltip="Unpaid shares. Updates every 5 minutes.">Unpaid shares</th>
-								<th class="tooltip is-tooltip-multiline" data-tooltip="Current address balance. Updates approximately every 30 minutes.">Balance</th>
-								<th class="tooltip is-tooltip-multiline" data-tooltip="E-mail alerts when miner goes offline and back online.">Alerts</th>
+								<th>矿工地址</th>
+								<th class="tooltip" data-tooltip="Status updates every 5 minutes.">状态</th>
+								<th class="tooltip" data-tooltip="Estimated hashrate. Updates every 5 minutes.">算力</th>
+								<th class="tooltip" data-tooltip="Unpaid shares. Updates every 5 minutes.">未支付份额</th>
+								<th class="tooltip is-tooltip-multiline" data-tooltip="Current address balance. Updates approximately every 30 minutes.">余额</th>
+								<th class="tooltip is-tooltip-multiline" data-tooltip="E-mail alerts when miner goes offline and back online.">警报</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -80,15 +80,15 @@
 
 					<a class="button is-primary" id="addMiner">
 						<span class="icon"><i class="fa fa-plus-square-o"></i></span>
-						<span>Add miner</span>
+						<span>添加矿工</span>
 					</a>
 				</form>
 				<hr>
-				<p><span class="important">Note:</span> statuses, hash rates and unpaid shares update every 5 minutes.</p>
+				<p><span class="important">注意：</span> 状态、算力和未支付份额每隔5分钟更新。</p>
 				<hr>
-				<p><span class="important">Note:</span> hash rate calculation is purely informational, it does not represent 'what the pool sees', or your real mining speed. It is a statistical approximation, displayed for informational purposes only. The reading should start matching your real speed over a longer period of time (usually 6 hours). You are always mining at full speed reported by typing <code>stats</code> into your CPU miner console or by observing the speed that your GPU miner shows. Displayed hash rate does not affect payouts at all.</p>
+				<p><span class="important">注意：</span> 算力每5分钟更新一次。算力计算非常不精确，并不代表矿池内的真实算力，也不代表矿工的真实算力，更不会影响支付。数据仅为统计近似值，用作参考。大约6小时后数值会接近真实算力值。在CPU矿工控制台键入 <code>stats</code> 或者观察 GPU 矿工显示的数值可以得知真实算力。</p>
 				<hr>
-				<p><span class="important">Note:</span> address balances update approximately every 30 minutes. Earnings / payouts update approximately every 4 hours. Like hash rate, this display is meant for a quick check on your miners once or twice a day, to see how they are doing. Always check your real time balance using the <code>balance</code> command in your wallet console if you need a precise value.</p>
+				<p><span class="important">注意：</span> 地址余额大约30分钟更新一次。收入/支出大约每4小时更新。和算力一样，系统显示的数值仅供每天一到两次快速查询矿工的工作状态。 如果你需要查询精确值，请在钱包控制台界面使用 <code>balance</code> 。</p>
 			</div>
 		</div>
 
@@ -96,18 +96,18 @@
 			<div class="modal-background"></div>
 			<div class="modal-card">
 				<header class="modal-card-head">
-					<p class="modal-card-title">Add miner</p>
+					<p class="modal-card-title">添加矿工</p>
 					<a class="delete close-modal" aria-label="close" href="#"></a>
 				</header>
 				<form id="addMinerForm" method="post" action="{{ route('miners.create') }}">
 					{{ csrf_field() }}
 					<section class="modal-card-body">
-						<p>You can find your miner address by typing <code>account</code> in wallet console.</p>
+						<p>You can find your miner address by typing在钱包控制台键入 <code>account</code> 可以找到你的矿工地址。</p>
 
 						<div class="column">
 							<div class="field is-horizontal">
 								<div class="field-label">
-									<label class="label">Address</label>
+									<label class="label">地址</label>
 								</div>
 
 								<div class="field-body">
@@ -143,7 +143,7 @@
 						</div>
 					</section>
 					<footer class="modal-card-foot">
-						<button type="submit" class="button is-success">Save</button>
+						<button type="submit" class="button is-success">保存</button>
 					</footer>
 				</form>
 			</div>
@@ -153,14 +153,14 @@
 			<div class="modal-background"></div>
 			<div class="modal-card">
 				<header class="modal-card-head">
-					<p class="modal-card-title">Delete miner</p>
+					<p class="modal-card-title">删除矿工</p>
 					<a class="delete close-modal" aria-label="close" href="#"></a>
 				</header>
 				<form id="deleteMinerForm" method="post" action="{{ route('miners.delete') }}">
 					<input type="hidden" name="_method" value="delete">
 					{{ csrf_field() }}
 					<section class="modal-card-body">
-						<p>Are you sure you want to delete this miner from your list? This will permanently delete miner's hashrate history.</p>
+						<p>你确定要从你的列表删除这个矿工？该操作将永久删除矿工的算力记录。</p>
 
 						<div class="column">
 							<div class="field is-horizontal">
@@ -201,8 +201,8 @@
 						</div>
 					</section>
 					<footer class="modal-card-foot">
-						<button type="submit" class="button is-danger">Delete</button>
-						<button type="button" class="button close-modal">Back</button>
+						<button type="submit" class="button is-danger">删除</button>
+						<button type="button" class="button close-modal">返回</button>
 					</footer>
 				</form>
 			</div>
@@ -212,7 +212,7 @@
 			<div class="modal-background"></div>
 			<div class="modal-card">
 				<header class="modal-card-head">
-					<p class="modal-card-title">Miner details</p>
+					<p class="modal-card-title">矿工细节</p>
 					<a class="delete close-modal" aria-label="close" href="#"></a>
 				</header>
 				<form id="deleteMinerForm" method="post" action="{{ route('miners.update') }}">
@@ -273,8 +273,8 @@
 						</div>
 					</section>
 					<footer class="modal-card-foot">
-						<button type="submit" class="button is-primary">Update note</button>
-						<button type="button" class="button close-modal">Back</button>
+						<button type="submit" class="button is-primary">更新记录</button>
+						<button type="button" class="button close-modal">返回</button>
 					</footer>
 				</form>
 			</div>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-	Miners by IP
+	矿工IP
 @endsection
 
 @section('hero')
@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Miners by IP
+					矿工IP
 				</h1>
 				<h2 class="subtitle">
-					All pool miners grouped by IP address
+					矿池所有矿工按IP地址分组
 				</h2>
 			</div>
 		</div>
@@ -23,10 +23,10 @@
 	<table class="miners-grouped table is-fullwidth">
 		<thead>
 			<tr>
-				<th>IP address</th>
-				<th class="tooltip is-tooltip-multiline" data-tooltip="Miners connected from this IP, their addresses and ports.">Miners</th>
-				<th class="tooltip is-tooltip-multiline" data-tooltip="Current estimated hashrate. The value is not averaged or corrected by any means.">Hashrate</th>
-				<th class="tooltip is-tooltip-multiline" data-tooltip="Registered users connected from this IP, and their miner addresses.">Users</th>
+				<th>IP 地址</th>
+				<th class="tooltip is-tooltip-multiline" data-tooltip="Miners connected from this IP, their addresses and ports.">矿工</th>
+				<th class="tooltip is-tooltip-multiline" data-tooltip="Current estimated hashrate. The value is not averaged or corrected by any means.">算力</th>
+				<th class="tooltip is-tooltip-multiline" data-tooltip="Registered users connected from this IP, and their miner addresses.">用户</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -72,14 +72,14 @@
 		<div class="modal-background"></div>
 		<div class="modal-card">
 			<header class="modal-card-head">
-				<p class="modal-card-title">IP address details</p>
+				<p class="modal-card-title">IP 地址细节</p>
 				<a class="delete close-modal" aria-label="close" href="#"></a>
 			</header>
 			<section class="modal-card-body">
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">IP address</label>
+							<label class="label">IP 地址</label>
 						</div>
 
 						<div class="field-body">
@@ -98,7 +98,7 @@
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">Unpaid shares</label>
+							<label class="label">未支付份额</label>
 						</div>
 
 						<div class="field-body">
@@ -117,7 +117,7 @@
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">In / out bytes</label>
+							<label class="label">入 / 出 bytes</label>
 						</div>
 
 						<div class="field-body">
@@ -136,7 +136,7 @@
 				<div class="column">
 					<div class="field is-horizontal">
 						<div class="field-label">
-							<label class="label">Miners</label>
+							<label class="label">矿工</label>
 						</div>
 
 						<div class="field-body">
@@ -148,7 +148,7 @@
 				</div>
 			</section>
 			<footer class="modal-card-foot">
-				<button type="button" class="button close-modal">Close</button>
+				<button type="button" class="button close-modal">关闭</button>
 			</footer>
 		</div>
 	</div>
