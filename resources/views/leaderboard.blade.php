@@ -9,10 +9,10 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title">
-					Leaderboard
+					排行榜
 				</h1>
 				<h2 class="subtitle">
-					Registered users contributing the most hashrate
+					贡献了最多算力的已注册用户
 				</h2>
 			</div>
 		</div>
@@ -27,12 +27,12 @@
 					<div class="notification is-info">
 						<button class="delete"></button>
 						@if ($authUser->exclude_from_leaderboard)
-							You are currently excluded from the leaderboard. Visit your <a href="{{ route('profile') }}">user profile</a> to change this setting.
+							你目前没有包含在排行榜内。如果想改变现有设置，请访问你的 <a href="{{ route('profile') }}">用户页面</a> 。
 						@else
 							@if ($authUser->anonymous_profile)
-								Your nick is currently hidden from other users, only you can see it. You can verify this by logging out. Visit your <a href="{{ route('profile') }}">user profile</a> to change this setting.
+								你的昵称目前向其他人隐藏了，只有你能看见。你可以登出以后进一步确认。如果想改变现有设置，请访问你的 <a href="{{ route('profile') }}">用户页面</a> 。
 							@else
-								Your nick is currently shown to all visitors. Visit your <a href="{{ route('profile') }}">user profile</a> to change this setting.
+								你的昵称目前向其他人显示。如果想改变现有设置，请访问你的 <a href="{{ route('profile') }}">用户页面</a> 。
 							@endif
 						@endif
 					</div>
@@ -41,16 +41,16 @@
 				@if (isset($authUser) && $authUser->isAdministrator())
 					<div class="notification is-info">
 						<button class="delete"></button>
-						You are an administrator, all user nicks and all users are visible. Log out to see the leaderboard as other users.
+						您是管理员，所有的用户昵称和所有用户都可见。您可以登出以其他用户身份查看排行榜。
 					</div>
 				@endif
 
 				<table class="table is-fullwidth is-striped">
 					<thead>
 						<tr>
-							<th>Rank</th>
-							<th>Nick</th>
-							<th class="tooltip is-tooltip-multiline" data-tooltip="Current hashrate of all user's registered miners. Updates every 5 minutes.">Hashrate</th>
+							<th>排名</th>
+							<th>昵称</th>
+							<th class="tooltip is-tooltip-multiline" data-tooltip="Current hashrate of all user's registered miners. Updates every 5 minutes.">算力</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -82,7 +82,7 @@
 							@endif
 						@empty
 							<tr>
-								<td colspan="3">No users to show, please check back later! ;-)</td>
+								<td colspan="3">目前没有可供显示的用户，请稍后再来查看！;-)</td>
 							</tr>
 						@endforelse
 						@if ($myself)
@@ -96,7 +96,7 @@
 				</table>
 
 				<hr>
-				<p><span class="important">Note:</span> Hash rates update every 5 minutes. Hash rate calculation is purely informational, it does not represent 'what the pool sees', or user's real mining speed. It is a statistical approximation, displayed for informational purposes only. The reading should start matching user's real speed over a longer period of time (usually 6 hours). Displayed hash rate does not affect payouts at all.</p>
+				<p><span class="important">注意：</span> 算力每5分钟更新。算力计算非常不准确，不代表矿池实际算力，或真实挖矿速度。仅是统计近似数值，仅供参考。大约开始挖矿6小时后数值会接近真实算力值。显示的算力值不影响支出。</p>
 			</div>
 		</div>
 	</div>

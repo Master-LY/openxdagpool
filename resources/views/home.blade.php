@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Home
+	主页
 @endsection
 
 @section('hero')
@@ -65,7 +65,7 @@
 				@if (isset($authUser) && $authUser->isAdministrator())
 					<div class="notification is-danger" id="adminPoolStateAlert">
 						<button class="delete"></button>
-						Warning, pool daemon state abnormal. This is admin-only notification.<br>
+						警告，矿池进程状态异常。本通知仅管理员可见。<br>
 						<span id="poolVersion"></span><br>
 						<span id="poolState"></span>
 					</div>
@@ -74,18 +74,18 @@
 				<div class="notification" id="balanceResult">
 					<button class="delete"></button>
 					<span></span>
-					<p><a href="#">View payouts</a></p>
+					<p><a href="#">查看支出</a></p>
 				</div>
 
 				<nav class="card">
 					<header class="card-header">
 						<div class="tabs stat-tabs">
 							<ul>
-								<li class="is-active" data-target=".pool-stats"><a>Pool statistics</a></li>
-								<li data-target=".pool-blocks"><a>Found blocks</a></li>
-								<li data-target=".network-stats"><a>Network statistics</a></li>
+								<li class="is-active" data-target=".pool-stats"><a>矿池统计</a></li>
+								<li data-target=".pool-blocks"><a>已发现区块</a></li>
+								<li data-target=".network-stats"><a>全网统计</a></li>
 								@if (!Auth::guest())
-									<li data-target=".user-stats"><a>{{ Auth::user()->display_nick }}'s statistics</a></li>
+									<li data-target=".user-stats"><a>{{ Auth::user()->display_nick }} 的统计</a></li>
 								@endif
 							</ul>
 						</div>
@@ -95,7 +95,7 @@
 						<nav class="level is-mobile pool-stats">
 							<div class="level-item has-text-centered tooltip" data-tooltip="Past 4 hours hashrate. Click for details.">
 								<div>
-									<p class="heading">Hashrate</p>
+									<p class="heading">算力</p>
 									<p class="title">
 										<a href="{{ route('stats') }}" class="stat api is-loading" data-stat="pool_hashrate"></a>
 									</p>
@@ -103,7 +103,7 @@
 							</div>
 							<div class="level-item has-text-centered tooltip" data-tooltip="Currently active miners. Click for details.">
 								<div>
-									<p class="heading">Miners</p>
+									<p class="heading">矿工</p>
 									<p class="title">
 										<a href="{{ route('stats') }}" class="stat api is-loading" data-stat="miners"></a>
 									</p>
@@ -111,13 +111,13 @@
 							</div>
 							<div class="level-item has-text-centered stat-tooltip is-tooltip-multiline" data-stat="config">
 								<div>
-									<p class="heading">Fees</p>
+									<p class="heading">费用</p>
 									<p class="title stat api is-loading" data-stat="fees"></p>
 								</div>
 							</div>
 							<div class="level-item has-text-centered stat-tooltip is-tooltip-multiline" data-stat="uptime_exact">
 								<div>
-									<p class="heading">Uptime</p>
+									<p class="heading">上线时间</p>
 									<p class="title stat api is-loading" data-stat="uptime"></p>
 								</div>
 							</div>
@@ -125,7 +125,7 @@
 						<nav class="level is-mobile pool-blocks inactive-tab-stats">
 							<div class="level-item has-text-centered tooltip is-tooltip-multiline" data-tooltip="Updates every 4 hours. Click for details.">
 								<div>
-									<p class="heading">Last month</p>
+									<p class="heading">上一月</p>
 									<p class="title">
 										<a href="{{ route('stats') }}" class="stat api is-loading" data-stat="blocks_last_month"></a>
 									</p>
@@ -133,7 +133,7 @@
 							</div>
 							<div class="level-item has-text-centered tooltip is-tooltip-multiline" data-tooltip="Updates every 4 hours. Click for details.">
 								<div>
-									<p class="heading">Last week</p>
+									<p class="heading">上一周</p>
 									<p class="title">
 										<a href="{{ route('stats') }}" class="stat api is-loading" data-stat="blocks_last_week"></a>
 									</p>
@@ -141,7 +141,7 @@
 							</div>
 							<div class="level-item has-text-centered tooltip is-tooltip-multiline" data-tooltip="Updates every 4 hours. Click for details.">
 								<div>
-									<p class="heading">Last day</p>
+									<p class="heading">昨日</p>
 									<p class="title">
 										<a href="{{ route('stats') }}" class="stat api is-loading" data-stat="blocks_last_day"></a>
 									</p>
@@ -149,7 +149,7 @@
 							</div>
 							<div class="level-item has-text-centered tooltip is-tooltip-multiline" data-tooltip="Updates every 4 hours. Approximate value based on last 20 blocks found. Click for a listing of latest found blocks.">
 								<div>
-									<p class="heading">Block every</p>
+									<p class="heading">每个块</p>
 									<p class="title">
 										<a href="{{ route('found-blocks') }}" class="stat api is-loading" data-stat="block_found_every"></a>
 									</p>
@@ -159,7 +159,7 @@
 						<nav class="level is-mobile network-stats inactive-tab-stats">
 							<div class="level-item has-text-centered tooltip" data-tooltip="Past 4 hours hashrate. Click for details.">
 								<div>
-									<p class="heading">Hashrate</p>
+									<p class="heading">算力</p>
 									<p class="title">
 										<a href="{{ route('stats') }}" class="stat api is-loading" data-stat="network_hashrate"></a>
 									</p>
@@ -167,19 +167,19 @@
 							</div>
 							<div class="level-item has-text-centered tooltip" data-tooltip="Number of known blocks">
 								<div>
-									<p class="heading">Blocks</p>
+									<p class="heading">区块</p>
 									<p class="title stat api is-loading" data-stat="blocks"></p>
 								</div>
 							</div>
 							<div class="level-item has-text-centered stat-tooltip" data-stat="supply" data-stat-prefix="Coin supply: ">
 								<div>
-									<p class="heading">Main blocks</p>
+									<p class="heading">主区块</p>
 									<p class="title stat api is-loading" data-stat="main_blocks"></p>
 								</div>
 							</div>
 							<div class="level-item has-text-centered stat-tooltip" data-stat="difficulty_exact">
 								<div>
-									<p class="heading">Difficulty</p>
+									<p class="heading">难度</p>
 									<p class="title stat api is-loading" data-stat="difficulty"></p>
 								</div>
 							</div>
@@ -188,7 +188,7 @@
 							<nav class="level is-mobile user-stats inactive-tab-stats">
 								<div class="level-item has-text-centered tooltip" data-tooltip="Your estimated hashrate. Click for details.">
 									<div>
-										<p class="heading">Hashrate</p>
+										<p class="heading">算力</p>
 										<p class="title">
 											<a href="{{ route('miners') }}" class="stat api is-loading" data-stat="user_hashrate"></a>
 										</p>
@@ -196,7 +196,7 @@
 								</div>
 								<div class="level-item has-text-centered tooltip" data-tooltip="Your active miners (machines). Click for details.">
 									<div>
-										<p class="heading">Miners</p>
+										<p class="heading">矿工</p>
 										<p class="title">
 											<a href="{{ route('miners') }}" class="stat api is-loading" data-stat="user_miners"></a>
 										</p>
@@ -204,7 +204,7 @@
 								</div>
 								<div class="level-item has-text-centered stat-tooltip" data-stat="user_earnings" data-stat-prefix="Earnings: ">
 									<div>
-										<p class="heading">Coins</p>
+										<p class="heading">余额</p>
 										<p class="title">
 											<a href="{{ route('miners') }}" class="stat api is-loading" data-stat="user_balance"></a>
 										</p>
@@ -212,7 +212,7 @@
 								</div>
 								<div class="level-item has-text-centered tooltip is-tooltip-multiline" data-tooltip="Out of all pool users with registered miners, this is how your hashrate compares to them.">
 									<div>
-										<p class="heading">Rank</p>
+										<p class="heading">排名</p>
 										<p class="title">
 											<a href="{{ route('leaderboard') }}" class="stat api is-loading" data-stat="user_rank"></a>
 										</p>
@@ -230,7 +230,7 @@
 				<nav class="card">
 					<header class="card-header">
 						<p class="card-header-title">
-							Wallet balance and payouts
+							钱包余额和支出
 						</p>
 					</header>
 
@@ -243,7 +243,7 @@
 									</div>
 									<div class="control">
 										<button class="button tooltip is-tooltip-multiline" data-tooltip="Balances update every 30 minutes. Payouts update every 4 hours." type="submit">
-											Show
+											显示
 										</button>
 									</div>
 								</div>
@@ -259,47 +259,47 @@
 				<nav class="card">
 					<header class="card-header">
 						<p class="card-header-title">
-							Mining information
+							挖矿信息
 						</p>
 					</header>
 
 					<div class="card-content">
-						<p>Windows GPU (<a href="{{ route('pages', 'setup/windows-gpu') }}">detailed instructions</a>):</p>
+						<p>Windows GPU (<a href="{{ route('pages', 'setup/windows-gpu') }}">详细介绍</a>):</p>
 						<pre class="oneline">
 							<span class="parameter">C:\DaggerGpuMiner</span>\DaggerGpuMiner.exe -G -a <span class="parameter">wallet_address</span> -p {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }} -t 0 -v 2 -opencl-platform <span class="parameter">platform_id</span> -opencl-devices <span class="parameter">device_nums</span>
 						</pre>
-						<p class="offset">Replace <span class="parameter">C:\DaggerGpuMiner</span> with full path to your xdag miner installation folder.</p>
-						<p>Replace <span class="parameter">wallet_address</span> with your wallet address.</p>
-						<p>Replace <span class="parameter">platform_id</span> with <code>0</code>, <code>1</code> or <code>2</code>. Try with <code>0</code> first, as this is the most common platform id.</p>
-						<p>Replace <span class="parameter">device_nums</span> with <code>0</code> or <code>0 1 2 3</code> or similar based on number of GPUs you have. Always count up from <code>0</code>.</p>
-						<p><span class="important">Note:</span> if you are using NVIDIA GPUs, make sure you add <code>-nvidia-fix</code> at the end of the command line to prevent high system CPU usage and increase your hashrate.</p>
+						<p class="offset">用你的xdag矿工安装目录替代 <span class="parameter">C:\DaggerGpuMiner</span> 。</p>
+						<p>用你的钱包地址替代 <span class="parameter">wallet_address</span> 。</p>
+						<p>用 <code>0</code>, <code>1</code> 或 <code>2</code> 替代 <span class="parameter">platform_id</span> 。先尝试 <code>0</code> ，这是最普遍的平台id。</p>
+						<p>用 <code>0</code> 或 <code>0 1 2 3</code> 替代 <span class="parameter">device_nums</span> 。根据矿机的GPU数量-1来设置，从 <code>0</code> 开始计数（一个GPU填0，两个填1，3个填2，以此类推）。</p>
+						<p><span class="important">注意：</span> 如果你使用的是 NVIDIA GPU，为防止过高的系统CPU占用以及增加算力，请在命令行添加 <code>-nvidia-fix</code> 。</p>
 
 						<hr>
 
-						<p>Windows CPU (<a href="{{ route('pages', 'setup/windows-cpu') }}">detailed instructions</a>):</p>
+						<p>Windows CPU (<a href="{{ route('pages', 'setup/windows-cpu') }}">详细介绍</a>):</p>
 						<pre class="oneline">
 							<span class="parameter">C:\xdag</span>\xdag.exe -d -m <span class="parameter">4</span> {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }}
 						</pre>
-						<p class="offset">Replace <span class="parameter">C:\xdag</span> with full path to your xdag installation folder.</p>
-						<p>Replace <span class="parameter">4</span> with number of mining threads, for dedicated mining machines, set this to number of CPU threads.</p>
+						<p class="offset">用你的xdag安装目录替代 <span class="parameter">C:\xdag</span> 。</p>
+						<p>用挖矿线程数替代 <span class="parameter">4</span> ，对于专用矿机，将该数量设置为CPU线程数。</p>
 
 						<hr>
 
-						<p>Unix GPU (<a href="{{ route('pages', 'setup/unix-gpu') }}">detailed instructions</a>):</p>
+						<p>Unix GPU (<a href="{{ route('pages', 'setup/unix-gpu') }}">详细介绍</a>):</p>
 						<pre class="oneline">
 							./xdag-gpu -G -a <span class="parameter">wallet_address</span> -p {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }} -t 0 -v 2 -opencl-platform <span class="parameter">platform_id</span> -opencl-devices <span class="parameter">device_nums</span>
 						</pre>
-						<p class="offset">Replace <span class="parameter">wallet_address</span> with your wallet address.</p>
-						<p>Replace <span class="parameter">platform_id</span> with <code>0</code>, <code>1</code> or <code>2</code>. Try with <code>0</code> first, as this is the most common platform id.</p>
-						<p>Replace <span class="parameter">device_nums</span> with <code>0</code> or <code>0 1 2 3</code> or similar based on number of GPUs you have. Always count up from <code>0</code>.</p>
-						<p><span class="important">Note:</span> if you are using NVIDIA GPUs, make sure you add <code>-nvidia-fix</code> at the end of the command line to prevent high system CPU usage and increase your hashrate.</p>
+						<p class="offset">用你的钱包地址替代 <span class="parameter">wallet_address</span> 。</p>
+						<p>用 <code>0</code>，<code>1</code> 或 <code>2</code> 替代 <span class="parameter">platform_id</span> 。先尝试用 <code>0</code> ，这是最普遍的平台id。</p>
+						<p>用 <code>0</code> 或 <code>0 1 2 3</code> 替代 <span class="parameter">device_nums</span> 。根据矿机的GPU数量-1来设置，从 <code>0</code> 开始计数（一个GPU填0，两个填1，3个填2，以此类推）。</p>
+						<p><span class="important">注意：</span> 如果你使用的是 NVIDIA GPU，为防止过高的系统CPU占用以及增加算力，请在命令行添加 <code>-nvidia-fix</code> 。</p>
 
 						<hr>
-						<p>Unix CPU (<a href="{{ route('pages', 'setup/unix-cpu') }}">detailed instructions</a>):</p>
+						<p>Unix CPU (<a href="{{ route('pages', 'setup/unix-cpu') }}">详细介绍</a>):</p>
 						<pre class="oneline">
 							./xdag -d -m <span class="parameter">4</span> {{ Setting::get('pool_domain') }}:{{ Setting::get('pool_port') }}
 						</pre>
-						<p class="offset">Replace <span class="parameter">4</span> with number of mining threads, for dedicated mining machines, set this to number of CPU threads.</p>
+						<p class="offset">用挖矿线程数替代 <span class="parameter">4</span> ，对于专用矿机，将该数量设置为CPU线程数。</p>
 					</div>
 				</nav>
 			</div>
@@ -307,16 +307,16 @@
 
 		<div class="columns is-marginless is-centered">
 			<div class="column is-7">
-				<nav class="card">
+				<nav class="card"
 					<header class="card-header">
 						<p class="card-header-title">
-							Optional registration
+							注册（可选）
 						</p>
 					</header>
 
 					<div class="card-content">
 						<div class="content">
-							Register if you want to easily keep track of your miners, their hashrates, balances, payouts and receive email notifications should your miner go offline.
+							注册后可以更容易地追踪你的矿工，包括它们的算力，余额，支出和在矿工离线的时候收到email提醒。
 						</div>
 					</div>
 				</nav>
@@ -328,7 +328,7 @@
 				<nav class="card">
 					<header class="card-header">
 						<p class="card-header-title">
-							Pool news
+							矿池新闻
 						</p>
 					</header>
 
